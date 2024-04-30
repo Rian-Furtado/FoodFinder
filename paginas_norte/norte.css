@@ -148,3 +148,11 @@ background-color: #F2F2F2; color: #3d3d3d;}
 .dsc-card{
     border: 1px solid grey;
 }
+
+.selected {
+  border: 2px solid blue;
+}
+
+#myForm{
+  display: none;
+}
