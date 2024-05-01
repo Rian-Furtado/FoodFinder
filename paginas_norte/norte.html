@@ -77,12 +77,17 @@
 
         <!-- O formulário está oculto inicialmente pessoal (não mudar) -->
         <form id="myForm">
-          <label for="nome">Nome:</label><br />
-          <input type="text" id="nome" name="nome" /><br />
-          <label for="preco">Preço:</label><br />
-          <input type="text" id="preco" name="preco" /><br />
+          <label for="name">Nome:</label><br />
+          <input type="text" id="name" name="name" /><br />
+          <label for="region">Região:</label><br />
+          <input type="text" id="region" name="region" /><br />
+          <label for="description">Descrição:</label><br />
+          <input type="text" id="description" name="description" /><br />
+          <label for="imageUrl">URL da Imagem:</label><br />
+          <input type="text" id="imageUrl" name="imageUrl" /><br />
           <input type="submit" value="Enviar" />
         </form>
+        
 
         <div class="dsc-catalog-cards dsc-mb20 dsc-mt20">
           <!-- Uso do onmousedown e onmouseuo  ABAIXO-->
@@ -91,137 +96,16 @@
             onmousedown="selectCard(this);"
             onmouseup="deselectCard(this);"
           >
+          
             <div class="dsc-catalog-card-top dsc-line-bottom">
               <!-- Função -ondblclick -->
-              <img src="../imagens/prato.png"  ondblclick="showModal()" alt="Computer" />
+              <img ondblclick="showModal()"
+                
+              />
             </div>
             <div class="dsc-catalog-card-bottom">
-              <!-- A janela modal -->
-              <div
-                id="myModal"
-                style="
-                  display: none;
-                  position: fixed;
-                  z-index: 1;
-                  left: 0;
-                  top: 0;
-                  width: 100%;
-                  height: 100%;
-                  overflow: auto;
-                  background-color: rgba(0, 0, 0, 0.5);
-                "
-              >
-                <div
-                  style="
-                    background-color: #fefefe;
-                    margin: 15% auto;
-                    padding: 20px;
-                    border: 1px solid #888;
-                    width: 80%;
-                  "
-                >
-                  <span
-                    style="
-                      color: #aaaaaa;
-                      float: right;
-                      font-size: 28px;
-                      font-weight: bold;
-                      cursor: pointer;
-                    "
-                    onclick="closeModal()"
-                    >&times;</span
-                  >
-                  <img
-                    src="../imagens/prato.png"
-                    alt="Sua Imagem"
-                    style="width: 100%"
-                  />
-                </div>
-              </div>
-
-              <h3>R$ 50</h3>
-              <h4>Prato X</h4>
-            </div>
-          </div>
-          <div class="dsc-card">
-            <div class="dsc-catalog-card-top dsc-line-bottom">
-              <img src="../imagens/prato.png" alt="Computer" />
-            </div>
-            <div class="dsc-catalog-card-bottom">
-              <h3>R$ 50</h3>
-              <h4>Prato X</h4>
-            </div>
-          </div>
-          <div class="dsc-card">
-            <div class="dsc-catalog-card-top dsc-line-bottom">
-              <img src="../imagens/prato.png" alt="Computer" />
-            </div>
-            <div class="dsc-catalog-card-bottom">
-              <h3>R$ 50</h3>
-              <h4>Prato X</h4>
-            </div>
-          </div>
-          <div class="dsc-card">
-            <div class="dsc-catalog-card-top dsc-line-bottom">
-              <img src="../imagens/prato.png" alt="Computer" />
-            </div>
-            <div class="dsc-catalog-card-bottom">
-              <h3>R$ 50</h3>
-              <h4>Prato X</h4>
-            </div>
-          </div>
-          <div class="dsc-card">
-            <div class="dsc-catalog-card-top dsc-line-bottom">
-              <img src="../imagens/prato.png" alt="Computer" />
-            </div>
-            <div class="dsc-catalog-card-bottom">
-              <h3>R$ 500</h3>
-              <h4>Prato X</h4>
-            </div>
-          </div>
-          <div class="dsc-card">
-            <div class="dsc-catalog-card-top dsc-line-bottom">
-              <img src="../imagens/prato.png" alt="Computer" />
-            </div>
-            <div class="dsc-catalog-card-bottom">
-              <h3>R$ 500</h3>
-              <h4>Prato X</h4>
-            </div>
-          </div>
-          <div class="dsc-card">
-            <div class="dsc-catalog-card-top dsc-line-bottom">
-              <img src="../imagens/prato.png" alt="Computer" />
-            </div>
-            <div class="dsc-catalog-card-bottom">
-              <h3>R$ 500</h3>
-              <h4>Prato X</h4>
-            </div>
-          </div>
-          <div class="dsc-card">
-            <div class="dsc-catalog-card-top dsc-line-bottom">
-              <img src="../imagens/prato.png" alt="Computer" />
-            </div>
-            <div class="dsc-catalog-card-bottom">
-              <h3>R$ 500</h3>
-              <h4>Prato X</h4>
-            </div>
-          </div>
-          <div class="dsc-card">
-            <div class="dsc-catalog-card-top dsc-line-bottom">
-              <img src="../imagens/prato.png" alt="Computer" />
-            </div>
-            <div class="dsc-catalog-card-bottom">
-              <h3>R$ 500</h3>
-              <h4>Prato X</h4>
-            </div>
-          </div>
-          <div class="dsc-card">
-            <div class="dsc-catalog-card-top dsc-line-bottom">
-              <img src="../imagens/prato.png" alt="Computer" />
-            </div>
-            <div class="dsc-catalog-card-bottom">
-              <h3>R$ 500</h3>
-              <h4>Prato X</h4>
+              <h3></h3>
+              <p></p>
             </div>
           </div>
         </div>
@@ -230,6 +114,54 @@
       <footer id="footer--norte">
         <p class="footer-creditos">Food_Finder 2024®</p>
       </footer>
+
+
+       <!-- A janela modal -->
+       <div
+       id="myModal"
+       style="
+         display: none;
+         position: fixed;
+         z-index: 1;
+         left: 0;
+         top: 0;
+         width: 100%;
+         height: 100%;
+         overflow: auto;
+         background-color: rgba(0, 0, 0, 0.5);
+       "
+     >
+       <div
+         style="
+           background-color: #fefefe;
+           margin: 15% auto;
+           padding: 20px;
+           border: 1px solid #888;
+           width: 80%;
+         "
+       >
+         <span
+           style="
+             color: #aaaaaa;
+             float: right;
+             font-size: 28px;
+             font-weight: bold;
+             cursor: pointer;
+           "
+           onclick="closeModal()"
+           >&times;</span
+         >
+         <img
+           src="../imagens/prato.png"
+           alt="Sua Imagem"
+           style="width: 100%"
+         />
+       </div>
+
+
+
+
+
     </div>
 
     <script src="norte.js"></script>
