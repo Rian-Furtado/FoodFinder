@@ -50,11 +50,93 @@
         </div>
     </header>
 
-    <footer id="footer-nordeste">
-        <div>
-            Food_Finder 2024®
+<!-- função onClick abaixo -->
+
+<section id="catalog-section" class="dsc-container">
+
+    <button id="btn-new" onclick="showForm()">Novo Produto</button>
+
+    <div class="form-container">
+      <div id="myModal2" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <form id="myForm">
+            <label for="name">Nome:</label><br />
+            <input type="text" id="name" name="name" /><br />
+            <label>Região:</label><br />
+            <input type="radio" id="norte" name="region" value="Norte" />
+            <label for="norte">Norte</label><br />
+            <input type="radio" id="nordeste" name="region" value="Nordeste" />
+            <label for="sul">Nordeste</label><br />
+            <input type="radio" id="centro-oeste" name="region" value="Centro-oeste" />
+            <label for="sul">Centro-oeste</label><br />
+            <input type="radio" id="sudest" name="region" value="sudeste" />
+            <label for="sul">Sudeste</label><br />
+            <input type="radio" id="sul" name="region" value="sul" />
+            <label for="sul">Sul</label><br />
+            <label for="description">Descrição:</label><br />
+            <input type="text" id="description" name="description" /><br />
+            <label for="imageUrl">URL da Imagem:</label><br />
+            <input type="text" id="imageUrl" name="imageUrl" /><br />
+            <input type="submit" value="Enviar" />
+          </form>
         </div>
-    </footer>
+      </div>
+    </div>
+
+
+    <div class="dsc-catalog-cards dsc-mb20"">
+      <!-- Uso do onmousedown e onmouseuo  ABAIXO-->
+      <div class="dsc-card" onmousedown="selectCard(this);" onmouseup="deselectCard(this);">
+
+        <div class="dsc-catalog-card-top dsc-line-bottom">
+          <!-- Função -ondblclick -->
+          <img onclick="showModal()" />
+        </div>
+        <div class="dsc-catalog-card-bottom">
+          <h3>Card de exemplo!</h3>
+          <p>Descrição</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- A janela modal -->
+  <div id="myModal" style="
+       display: none;
+       position: fixed;
+       z-index: 1;
+       left: 0;
+       top: 0;
+       width: 100%;
+       height: 100%;
+       overflow: auto;
+       background-color: rgba(0, 0, 0, 0.5);
+     ">
+    <div style="
+         background-color: #fefefe;
+         margin: 15% auto;
+         padding: 20px;
+         border: 1px solid #888;
+         width: 80%;
+       ">
+      <span style="
+           color: #aaaaaa;
+           float: right;
+           font-size: 28px;
+           font-weight: bold;
+           cursor: pointer;
+         " onclick="closeModal()">&times;</span>
+      <img src="#" alt="Sua Imagem"/>
+    </div>
+  </div>
+
+  <footer id="footer--nordeste">
+    <p class="footer-creditos">Food_Finder 2024®</p>
+  </footer>
+
+
+    <script src="nordeste.js"></script>
 </body>
 
 </html>
