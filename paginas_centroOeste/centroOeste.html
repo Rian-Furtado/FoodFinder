@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="../imagens/imagens centro-oeste/favicon_centro_oeste.png">
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="../paginas_centroOeste/centroOeste.css">
     <title>_centro-oeste</title>
 </head>
+
 <body id="body-centroOeste">
     <nav id="menu-centroOeste">
         <ul class="menu">
@@ -31,70 +33,70 @@
         </ul>
     </nav>
 
-        <header id="header--centroOeste">
-            <div id="div--titulo">
-                <a href="../index.html" class="aVoltar"> <img src="../imagens/icone_voltar.png" class="imgLink">voltar</a>
-                <h1 class="head--titulo">_centro-oeste</h1>
-                <p class="head--txt">goiás, mato grosso, mato grosso do sul e distrito federa</p>
-            </div>
-            <div id="div--img-centroOeste">
-                <img src="../imagens/imagens centro-oeste/mapa-br-centrooeste.png">
-            </div>
-        </header>
-
-        <!-- função onClick abaixo -->
-
-<section id="catalog-section" class="dsc-container">
-
-    <button id="btn-new" onclick="showForm()">Novo Produto</button>
-
-    <div class="form-container">
-      <div id="myModal2" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <form id="myForm">
-            <label for="name">Nome:</label><br />
-            <input type="text" id="name" name="name" /><br />
-            <label>Região:</label><br />
-            <input type="radio" id="norte" name="region" value="Norte" />
-            <label for="norte">Norte</label><br />
-            <input type="radio" id="nordeste" name="region" value="Nordeste" />
-            <label for="sul">Nordeste</label><br />
-            <input type="radio" id="centro-oeste" name="region" value="Centro-Oeste" />
-            <label for="sul">Centro-Oeste</label><br />
-            <input type="radio" id="sudest" name="region" value="sudeste" />
-            <label for="sul">Sudeste</label><br />
-            <input type="radio" id="sul" name="region" value="sul" />
-            <label for="sul">Sul</label><br />
-            <label for="description">Descrição:</label><br />
-            <input type="text" id="description" name="description" /><br />
-            <label for="imageUrl">URL da Imagem:</label><br />
-            <input type="text" id="imageUrl" name="imageUrl" /><br />
-            <input type="submit" value="Enviar" />
-          </form>
+    <header id="header--centroOeste">
+        <div id="div--titulo">
+            <a href="../index.html" class="aVoltar"> <img src="../imagens/icone_voltar.png" class="imgLink">voltar</a>
+            <h1 class="head--titulo">_centro-oeste</h1>
+            <p class="head--txt">goiás, mato grosso, mato grosso do sul e distrito federa</p>
         </div>
-      </div>
-    </div>
+        <div id="div--img-centroOeste">
+            <img src="../imagens/imagens centro-oeste/mapa-br-centrooeste.png">
+        </div>
+    </header>
+
+    <!-- função onClick abaixo -->
+
+    <section id="catalog-section" class="dsc-container">
+
+        <button id="btn-new" onclick="showForm()">Novo Produto</button>
+
+        <div class="form-container">
+            <div id="myModal2" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <form id="myForm">
+                        <label for="name">Nome:</label><br />
+                        <input type="text" id="name" name="name" /><br />
+                        <label>Região:</label><br />
+                        <input type="radio" id="norte" name="region" value="Norte" />
+                        <label for="norte">Norte</label><br />
+                        <input type="radio" id="nordeste" name="region" value="Nordeste" />
+                        <label for="sul">Nordeste</label><br />
+                        <input type="radio" id="centro-oeste" name="region" value="Centro-Oeste" />
+                        <label for="sul">Centro-Oeste</label><br />
+                        <input type="radio" id="sudest" name="region" value="sudeste" />
+                        <label for="sul">Sudeste</label><br />
+                        <input type="radio" id="sul" name="region" value="sul" />
+                        <label for="sul">Sul</label><br />
+                        <label for="description">Descrição:</label><br />
+                        <input type="text" id="description" name="description" /><br />
+                        <label for="imageUrl">URL da Imagem:</label><br />
+                        <input type="text" id="imageUrl" name="imageUrl" /><br />
+                        <input type="submit" value="Enviar" />
+                    </form>
+                </div>
+            </div>
+        </div>
 
 
-    <div class="dsc-catalog-cards dsc-mb20"">
+        <div class="dsc-catalog-cards dsc-mb20"">
       <!-- Uso do onmousedown e onmouseuo  ABAIXO-->
-      <div class="dsc-card" onmousedown="selectCard(this);" onmouseup="deselectCard(this);">
+      <div class=" dsc-card" onmousedown="selectCard(this);" onmouseup="deselectCard(this);">
 
-        <div class="dsc-catalog-card-top dsc-line-bottom">
-          <!-- Função -ondblclick -->
-          <img onclick="showModal()" />
+            <div class="dsc-catalog-card-top dsc-line-bottom">
+                <!-- Função -ondblclick -->
+                <img onclick="showModal()" />
+            </div>
+            <div class="dsc-catalog-card-bottom">
+                <h3>Card de exemplo!</h3>
+                <p>Descrição</p>
+            </div>
         </div>
-        <div class="dsc-catalog-card-bottom">
-          <h3>Card de exemplo!</h3>
-          <p>Descrição</p>
         </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- A janela modal -->
-  <div id="myModal" style="
+    </section>
+
+    <!-- A janela modal -->
+    <div id="myModal" style="
        display: none;
        position: fixed;
        z-index: 1;
@@ -105,29 +107,30 @@
        overflow: auto;
        background-color: rgba(0, 0, 0, 0.5);
      ">
-    <div style="
+        <div style="
          background-color: #fefefe;
          margin: 15% auto;
          padding: 20px;
          border: 1px solid #888;
          width: 80%;
        ">
-      <span style="
+            <span style="
            color: #aaaaaa;
            float: right;
            font-size: 28px;
            font-weight: bold;
            cursor: pointer;
          " onclick="closeModal()">&times;</span>
-      <img src="#" alt="Sua Imagem"/>
+            <img src="#" alt="Sua Imagem" />
+        </div>
     </div>
-  </div>
-        
-        <footer id="footer--centroOeste">
-            <p class="footer-creditos">Food_Finder 2024®</p>
-        </footer>
+
+    <footer id="footer--centroOeste">
+        <p class="footer-creditos">Food_Finder 2024®</p>
+    </footer>
     </div>
 
     <script src="centroOeste.js"></script>
 </body>
+
 </html>
