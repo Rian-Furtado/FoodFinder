@@ -46,24 +46,27 @@ function loadCards() {
         card.className = 'dsc-card';
         card.dataset.id = data[i].id;
 
-        let deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Deletar';
-        deleteButton.onclick = () => {
-          let foodId = card.dataset.id;
-        
-          fetch(`http://localhost:8080/api/foods/${foodId}`, {
-            method: 'DELETE',
-          })
-            .then(response => {
-              if (response.ok) {
-                console.log(`Comida com ID ${foodId} deletada com sucesso.`);
-                // Remove o card após deletar a comida
-                card.remove();
-              } else {
-                console.error('Erro ao deletar a comida:', response.statusText);
-              }
+        // Cria o botão "Deletar" apenas se ele não existir
+        let deleteButton = card.querySelector('button') || document.createElement('button');
+        if (!deleteButton.onclick) {
+          deleteButton.textContent = 'Deletar';
+          deleteButton.onclick = () => {
+            let foodId = card.dataset.id
+
+            fetch(`http://localhost:8080/api/foods/${foodId}`, {
+              method: 'DELETE',
             })
-            .catch(error => console.error('Error:', error));
+              .then(response => {
+                if (response.ok) {
+                  console.log(`Comida com ID ${foodId} deletada com sucesso.`);
+                  // Remove o card após deletar a comida
+                  card.remove();
+                } else {
+                  console.error('Erro ao deletar a comida:', response.statusText);
+                }
+              })
+              .catch(error => console.error('Error:', error));
+          }
         };
 
 
@@ -90,7 +93,7 @@ function loadCards() {
         bottom.appendChild(h3);
         bottom.appendChild(p);
         bottom.appendChild(deleteButton);
-       
+
         // Adiciona as partes superior e inferior ao card
         card.appendChild(top);
         card.appendChild(bottom);
@@ -134,7 +137,7 @@ document.querySelector('#myForm').addEventListener('submit', function (event) {
       document.querySelector('#myForm').reset();
 
       // Carrega os cards novamente após adicionar um novo objeto
-      
+      loadCards();
     })
     .catch(error => console.error('Error:', error));
 });
