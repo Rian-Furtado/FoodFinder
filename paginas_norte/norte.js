@@ -50,7 +50,7 @@ function closeModal() {
 }
 
 function loadCards() {
-  fetch('http://localhost:8080/api/foods')
+  fetch('http://localhost:8080/api/foods/region/Norte')
     .then(response => response.json())
     .then(data => {
       // Seleciona o container onde os cards serão inseridos
@@ -137,7 +137,7 @@ document.querySelector('#myForm').addEventListener('submit', function (event) {
   // Cria um objeto com os dados do formulário
   let food = {
     name: document.querySelector('#name').value,
-    region: document.querySelector('#region').value,
+    region: document.querySelector('input[name="region"]:checked').value,
     description: document.querySelector('#description').value,
     imageUrl: document.querySelector('#imageUrl').value
   };

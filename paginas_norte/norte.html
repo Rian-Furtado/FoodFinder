@@ -68,8 +68,17 @@
             <form id="myForm">
               <label for="name">Nome:</label><br />
               <input type="text" id="name" name="name" /><br />
-              <label for="region">Região:</label><br />
-              <input type="text" id="region" name="region" /><br />
+              <label>Região:</label><br />
+              <input type="radio" id="norte" name="region" value="Norte" />
+              <label for="norte">Norte</label><br />
+              <input type="radio" id="nordeste" name="region" value="Nordeste" />
+              <label for="sul">Nordeste</label><br />
+              <input type="radio" id="centro-oeste" name="region" value="Centro-oeste" />
+              <label for="sul">Centro-oeste</label><br />
+              <input type="radio" id="sudest" name="region" value="sudeste" />
+              <label for="sul">Sudeste</label><br />
+              <input type="radio" id="sul" name="region" value="sul" />
+              <label for="sul">Sul</label><br />
               <label for="description">Descrição:</label><br />
               <input type="text" id="description" name="description" /><br />
               <label for="imageUrl">URL da Imagem:</label><br />
@@ -130,11 +139,6 @@
            " onclick="closeModal()">&times;</span>
         <img src="#" alt="Sua Imagem" style="width: 100%" />
       </div>
-
-
-
-
-
     </div>
 
     <script src="norte.js"></script>
