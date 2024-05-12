@@ -49,7 +49,7 @@ function closeModal() {
 }
 
 function loadCards() {
-  fetch('http://localhost:8080/api/foods/region/Norte')
+  fetch('https://api-broccoli.onrender.com/api/foods/region/Norte')
     .then(response => response.json())
     .then(data => {
       // Seleciona o container onde os cards serão inseridos
@@ -79,7 +79,7 @@ function loadCards() {
           deleteButton.onclick = () => {
             let foodId = card.dataset.id
 
-            fetch(`http://localhost:8080/api/foods/${foodId}`, {
+            fetch(`https://api-broccoli.onrender.com/api/foods/${foodId}`, {
               method: 'DELETE',
             })
               .then(response => {
@@ -148,7 +148,7 @@ document.querySelector('#myForm').addEventListener('submit', function (event) {
   };
 
   // Envia a requisição para a API
-  fetch('http://localhost:8080/api/foods', {
+  fetch('https://api-broccoli.onrender.com/api/foods', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

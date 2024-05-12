@@ -49,7 +49,7 @@ function showForm() {
   }
   
   function loadCards() {
-    fetch('http://localhost:8080/api/foods/region/Centro-Oeste')
+    fetch('https://api-broccoli.onrender.com/api/foods/region/Centro-Oeste')
       .then(response => response.json())
       .then(data => {
         // Seleciona o container onde os cards serão inseridos
@@ -148,7 +148,7 @@ function showForm() {
     };
   
     // Envia a requisição para a API
-    fetch('http://localhost:8080/api/foods', {
+    fetch('https://api-broccoli.onrender.com/api/foods', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
