@@ -9,7 +9,24 @@ function deselectCard(element) {
 
 
 function showForm() {
-  document.getElementById("myForm").style.display = "block";
+  var modal = document.getElementById("myModal2");
+  var btn = document.getElementById("btn-new");
+  var span = document.getElementsByClassName("close")[0];
+
+  btn.onclick = function () {
+    modal.style.display = "block";
+  }
+
+  span.onclick = function () {
+    modal.style.display = "none";
+  }
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
 }
 
 function showModal() {
@@ -38,6 +55,10 @@ function loadCards() {
     .then(data => {
       // Seleciona o container onde os cards serão inseridos
       let container = document.querySelector('.dsc-catalog-cards');
+
+      if (data.length == 0) {
+        return;
+      }
 
       // Itera sobre cada comida
       for (let i = 0; i < data.length; i++) {
