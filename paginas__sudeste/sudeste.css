@@ -173,6 +173,124 @@ td {
     font-size: 14px;
 }
 
+
+/* CATALOGO */
+
+#catalog-section {
+    padding: 20px 0;
+  }
+  
+  .dsc-catalog-cards {
+    margin: 8px;
+  }
+  
+  .dsc-catalog-cards {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+  }
+  
+  .dsc-catalog-card-top {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .dsc-catalog-card-top img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .dsc-catalog-card-bottom {
+    padding: 10px 20px;
+    min-height: 110px;
+  }
+  
+  .dsc-catalog-card-bottom h3 {
+    color: var(--dsc-color-font-secondary);
+    font-size: 20px;
+  }
+  
+  .dsc-catalog-card-bottom h4 {
+    color: var(--dsc-color-font-primary);
+    font-size: 12px;
+  }
+  
+  .dsc-card {
+    border: 1px solid grey;
+  }
+  
+  .selected {
+    border: 2px solid blue;
+  }
+  
+  #btn-new {
+    background-color: #4caf50;
+    color: white;
+    padding: 14px 20px;
+    margin: 3px 0px 16px 8px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #btn-new:hover {
+    opacity: 0.8;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  #myForm {
+    padding: 20px;
+    margin: 20px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+  }
+  
+  form label {
+    margin-bottom: 0.5em;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  form input {
+    padding: 10px;
+  }
+  
+  form input[type="submit"] {
+    margin-top: 10px;
+    background-color: #4caf50;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  form input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
 /*--------------------------------------------FOOTER--------------------------------------------*/
 
 #footer-sudeste {
