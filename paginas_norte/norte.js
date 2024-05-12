@@ -1,13 +1,3 @@
-
-function selectCard(element) {
-  element.classList.add('selected');
-}
-
-function deselectCard(element) {
-  element.classList.remove('selected');
-}
-
-
 function showForm() {
   var modal = document.getElementById("myModal2");
   var btn = document.getElementById("btn-new");
@@ -28,6 +18,15 @@ function showForm() {
   }
 
 }
+
+function selectCard(element) {
+  element.classList.add('selected');
+}
+
+function deselectCard(element) {
+  element.classList.remove('selected');
+}
+
 
 function showModal() {
   // document.getElementById("myModal").style.display = "block";
@@ -71,6 +70,12 @@ function loadCards() {
         let deleteButton = card.querySelector('button') || document.createElement('button');
         if (!deleteButton.onclick) {
           deleteButton.textContent = 'Deletar';
+          deleteButton.style.backgroundColor = '#4CAF50';
+          deleteButton.style.color = 'white';
+          deleteButton.style.padding = '14px 20px';
+          deleteButton.style.margin = '8px 0px 0px 0px';
+          deleteButton.style.border = 'none';
+          deleteButton.style.cursor = 'pointer';
           deleteButton.onclick = () => {
             let foodId = card.dataset.id
 

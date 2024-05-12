@@ -13,6 +13,7 @@
   <meta name="description" content="Página da região norte do site Aqui_no" />
   <link rel="stylesheet" href="../paginas_norte/norte.css" />
   <title>_norte</title>
+
 </head>
 
 <body>
@@ -61,6 +62,7 @@
     <section id="catalog-section" class="dsc-container">
 
       <button id="btn-new" onclick="showForm()">Novo Produto</button>
+
       <div class="form-container">
         <div id="myModal2" class="modal">
           <div class="modal-content">
@@ -90,13 +92,13 @@
       </div>
 
 
-      <div class="dsc-catalog-cards dsc-mb20">
+      <div class="dsc-catalog-cards dsc-mb20"">
         <!-- Uso do onmousedown e onmouseuo  ABAIXO-->
         <div class="dsc-card" onmousedown="selectCard(this);" onmouseup="deselectCard(this);">
 
           <div class="dsc-catalog-card-top dsc-line-bottom">
             <!-- Função -ondblclick -->
-            <img ondblclick="showModal()" />
+            <img onclick="showModal()" />
           </div>
           <div class="dsc-catalog-card-bottom">
             <h3>Card de exemplo!</h3>
