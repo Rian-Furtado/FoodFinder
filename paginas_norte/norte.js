@@ -1,22 +1,19 @@
-function showForm() {
-  var modal = document.getElementById("myModal2");
-  var btn = document.getElementById("btn-new");
-  var span = document.getElementsByClassName("close")[0];
+var modal = document.getElementById("myModal2");
+var btn = document.getElementById("btn-new");
+var span = document.getElementsByClassName("close")[0];
 
-  btn.onclick = function () {
-    modal.style.display = "block";
-  }
+btn.onclick = function () {
+  modal.style.display = "block";
+}
 
-  span.onclick = function () {
+span.onclick = function () {
+  modal.style.display = "none";
+}
+
+window.onclick = function (event) {
+  if (event.target == modal) {
     modal.style.display = "none";
   }
-
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
-
 }
 
 function selectCard(element) {
@@ -29,18 +26,9 @@ function deselectCard(element) {
 
 
 function showModal() {
-  // document.getElementById("myModal").style.display = "block";
-
-  // Recupera a URL da imagem do atributo de dados
   let imageUrl = event.target.dataset.imageUrl;
-
-  // Seleciona a imagem do modal
   let modalImg = document.querySelector('#myModal img');
-
-  // Atualiza a imagem do modal
   modalImg.src = imageUrl;
-
-  // Mostra o modal
   document.querySelector('#myModal').style.display = 'block';
 }
 
@@ -52,21 +40,17 @@ function loadCards() {
   fetch('https://api-broccoli.onrender.com/api/foods/region/Norte')
     .then(response => response.json())
     .then(data => {
-      // Seleciona o container onde os cards serão inseridos
       let container = document.querySelector('.dsc-catalog-cards');
 
       if (data.length == 0) {
         return;
       }
 
-      // Itera sobre cada comida
       for (let i = 0; i < data.length; i++) {
-        // Seleciona o card existente ou cria um novo
         let card = container.children[i] || document.createElement('div');
         card.className = 'dsc-card';
         card.dataset.id = data[i].id;
 
-        // Cria o botão "Deletar" apenas se ele não existir
         let deleteButton = card.querySelector('button') || document.createElement('button');
         if (!deleteButton.onclick) {
           deleteButton.textContent = 'Deletar';
@@ -85,7 +69,6 @@ function loadCards() {
               .then(response => {
                 if (response.ok) {
                   console.log(`Comida com ID ${foodId} deletada com sucesso.`);
-                  // Remove o card após deletar a comida
                   card.remove();
                 } else {
                   console.error('Erro ao deletar a comida:', response.statusText);
@@ -95,11 +78,30 @@ function loadCards() {
           }
         };
 
+        let shareButton = card.querySelector('.whatsapp-share-button') || document.createElement('button');
+        if (!shareButton.onclick) {
+          shareButton.textContent = 'Compartilhar no WhatsApp';
+          shareButton.className = 'whatsapp-share-button';
+          shareButton.style.backgroundColor = '#25D366';
+          shareButton.style.color = 'white';
+          shareButton.style.padding = '14px 20px';
+          shareButton.style.margin = '8px 0px 0px 0px';
+          shareButton.style.border = 'none';
+          shareButton.style.cursor = 'pointer';
+          shareButton.onclick = () => {
+            let foodName = data[i].name;
+            let foodDescription = data[i].description;
+            let foodImageUrl = data[i].imageUrl;
+            let message = `Olá! Confira este delicioso prato:\n\nNome: ${foodName}\nDescrição: ${foodDescription}\n\nVeja a imagem aqui: ${foodImageUrl}`;
+            let encodedMessage = encodeURIComponent(message);
+            let whatsappUrl = `https://api.whatsapp.com/send?text=${encodedMessage}`;
+            window.open(whatsappUrl);
+          }
+        };
 
         card.onmousedown = function () { selectCard(this); };
         card.onmouseup = function () { deselectCard(this); };
 
-        // Cria a parte superior do card
         let top = card.querySelector('.dsc-catalog-card-top') || document.createElement('div');
         top.className = 'dsc-catalog-card-top dsc-line-bottom';
         let img = top.querySelector('img') || document.createElement('img');
@@ -109,7 +111,6 @@ function loadCards() {
         img.ondblclick = showModal;
         top.appendChild(img);
 
-        // Cria a parte inferior do card
         let bottom = card.querySelector('.dsc-catalog-card-bottom') || document.createElement('div');
         bottom.className = 'dsc-catalog-card-bottom';
         let h3 = bottom.querySelector('h3') || document.createElement('h3');
@@ -119,12 +120,11 @@ function loadCards() {
         bottom.appendChild(h3);
         bottom.appendChild(p);
         bottom.appendChild(deleteButton);
+        bottom.appendChild(shareButton);
 
-        // Adiciona as partes superior e inferior ao card
         card.appendChild(top);
         card.appendChild(bottom);
 
-        // Adiciona o card ao container
         if (!container.children[i]) {
           container.appendChild(card);
         }
@@ -132,6 +132,7 @@ function loadCards() {
     })
     .catch(error => console.error('Error:', error));
 }
+
 
 loadCards();
 

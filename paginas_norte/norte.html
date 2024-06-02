@@ -61,7 +61,7 @@
 
     <section id="catalog-section" class="dsc-container">
 
-      <button id="btn-new" onclick="showForm()">Novo Produto</button>
+      <button id="btn-new">Novo Produto</button>
 
       <div class="form-container">
         <div id="myModal2" class="modal">
@@ -83,16 +83,19 @@
               <label for="sul">Sul</label><br />
               <label for="description">Descrição:</label><br />
               <input type="text" id="description" name="description" /><br />
-              <label for="imageUrl">URL da Imagem:</label><br />
+              <label for="imageUrl">URL da Imagem:</label>
+              <br />
               <input type="text" id="imageUrl" name="imageUrl" /><br />
-              <input type="submit" value="Enviar" />
+              <a href="https://postimages.org/" target="_blank">Como adicionar sua imagem como URL.</a><br />
+              <!-- <a href="https://api.whatsapp.com/send?text=sua%20mensagem">Compartilhar no WhatsApp</a> -->
+              <input type="submit" value="Enviar"/>
             </form>
           </div>
         </div>
       </div>
 
 
-      <div class="dsc-catalog-cards dsc-mb20"">
+      <div class="dsc-catalog-cards dsc-mb20">
         <!-- Uso do onmousedown e onmouseuo  ABAIXO-->
         <div class="dsc-card" onmousedown="selectCard(this);" onmouseup="deselectCard(this);">
 
@@ -101,8 +104,8 @@
             <img onclick="showModal()" />
           </div>
           <div class="dsc-catalog-card-bottom">
-            <h3>Card de exemplo!</h3>
-            <p>Descrição</p>
+            <h3>Título Exemplo</h3>
+            <p>Descrição Exemplo</p>
           </div>
         </div>
       </div>

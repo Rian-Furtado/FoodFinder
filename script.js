@@ -1,14 +1,15 @@
-var links = new Array(5)
+var links = new Array(5);
 links[0] = "paginas_norte/norte.html";
-links[1] = "paginas_norte/norte.html";
-links[2] = "paginas_norte/norte.html";
-links[3] = "paginas_norte/norte.html";
-links[4] = "paginas_norte/norte.html";
+links[1] = "paginas_nordeste/nordeste.html";
+links[2] = "paginas_centroOeste/centroOeste.html";
+links[3] = "paginas__sul/sul.html";
+links[4] = "paginas__sudeste/sudeste.html";
 
 function aleatorio() {
-    var numero = Math.round(Math.random() * 25)
-    location.href = links[numero]
+    var numero = Math.floor(Math.random() * links.length);
+    location.href = links[numero];
 }
+
 
 let rodape = document.querySelector("footer#footer--norte")
 
